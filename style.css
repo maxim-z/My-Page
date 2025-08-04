@@ -1,0 +1,539 @@
+/* Reset all of the default settings */
+* {
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+  /*overflow: hidden;
+  position: relative;*/
+}
+
+/* Variables */
+:root {
+  --primary-color: #A5C9CA;
+  --secondary-color: #395B64;
+  --tertiary-color: #89435C;
+  --quadraury-color: #495A8C;
+  --red-color: #ff8080;
+  --name-color: #b6dbe0;
+  --accent-color: #2C3333;
+  --offwhite-color: #E7F6F2;
+  --white-color: #FFFFFF;
+  --text-color: #939393;
+  --font-main: 'Poppins', sans-serif;
+  --font-weight-light: 300;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+
+  /*--main-offset: 60em;
+  --three-quarter-main-offset: 45em;
+  --half-main-offset: 30em;
+  --quarter-main-offset: 15em;*/
+
+  --main-offset: 5em;
+  --three-quarter-main-offset: 3em;
+  --half-main-offset: 2em;
+  --quarter-main-offset: 1em;
+  --eigth-main-offset: 0.5em;
+  --sixteenth-main-offset: 0.25em;
+
+  /* mobile vars */
+  --mobile-main-offset: 15em;
+  --mobile-three-quarter-main-offset: 12em;
+  --mobile-half-main-offset: 7.5em;
+  --mobile-quarter-main-offset: 3.05em;
+  --mobile-eigth-main-offset: 1.9em;
+  --mobile-sixteenth-main-offset: 0.9em;
+
+  --project-box-background: #c5e2e8;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  background-color: var(--primary-color);
+}
+
+/* My name at the top left of the page */
+
+.name {
+  position: fixed;
+  font-size: 25%;
+  text-transform: uppercase;
+  color: var(--offwhite-color);
+  display: flex;
+  align-content: center;
+  z-index: 1001;
+  margin-left: var(--half-main-offset);
+
+  display: none;
+}
+
+
+/* Main navigation menu at the top */
+
+.nav-main {
+  width: 100%; /* Takes up the width of the entire page */
+  height: var(--main-offset); /* Is 60 pixels tall regardless of what happens */
+  background-color: var(--secondary-color);
+  position: fixed; /*  */
+  display: flex;
+  flex-wrap: wrap;
+  /*justify-content: center;*/
+  /*align-content: center;*/
+  z-index: 1000;
+}
+
+.nav-main h3 {
+  width: 100%;
+  height: var(--half-main-offset);
+  position: fixed;
+  display: flex;
+  z-index: 1001;
+
+  top: 0;
+
+  font-size: var(--half-main-offset);
+  text-transform: uppercase;
+  color: var(--name-color);
+  margin-top: 1.5em;
+  margin-left: 0.8em;
+}
+
+.nav-main h3 b {
+  color: var(--red-color);
+  cursor: pointer;
+}
+
+/* Remove my name from the nav menu when the page gets too small */
+@media (max-width: 910px) {
+  .nav-main h3 {
+    display: none;
+  }
+}
+
+/* For script.js */
+.nav-main h3 .blue {
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+/* My name displayed at the top left of the nav menu */
+.btn-nav {
+  display: none;
+  z-index: 1001;
+  position: left;
+  margin: 0;
+  width: 60px;
+  height: 60px;
+  background-color: var(--red-color);
+  background-image: url("img/m_logo_transparent.png");
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+  cursor: pointer;
+}
+
+.btn-nav:hover {
+  opacity: 0.8;
+}
+
+/* Bigger font menu items */
+.nav-main ul {
+  align-content: center;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: var(--secondary-color);
+}
+
+#my-name {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-transform: uppercase;
+  color: var(--offwhite-color);
+  display: none;
+  gap: 50px;
+}
+
+.nav-main ul li {
+  list-style: none;
+}
+
+.nav-main ul li a {
+  display: flex;
+  flex-flow: column wrap;
+  z-index: 1002;
+  height: 100%;
+  padding: 0 15px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--offwhite-color);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Highlight the text when the user hovers over it so they know it's clickable in addition to the arrow changing to a pointer */
+.nav-main ul li a:hover {
+  color: var(--red-color);
+}
+
+/* Smaller fonts below the menu items */
+.nav-main ul li a h6 {
+  max-width: 100%;
+  font-size: auto;
+  color: var(--primary-color);
+  text-transform: none;
+  display: flex;
+  justify-content: center;
+}
+
+/* Side bar links with links to other info sites */
+
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: var(--main-offset); /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  right: 0; /* Stay at the right */
+  /*top: 0;  Stay at the top */
+  bottom: 0; /* Stay at the bottom */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-end;
+  background-color: var(--red-color);
+  margin: 0;
+}
+
+.sidenav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.sidenav ul li {
+  list-style: none;
+  padding: 20px;
+}
+
+.sidenav ul li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--offwhite-color);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Main content on page */
+
+.main {
+  overflow-y: auto;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
+  margin-left: var(--main-offset);
+  margin-top: var(--main-offset);
+  margin-right: var(--main-offset);
+
+  padding: 10px;
+
+  position: fixed;
+  height: calc(100% - var(--main-offset));
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  z-index: 800;
+}
+
+.main-text {
+  padding: 10px;
+  max-width: 50%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: left;
+}
+
+@media (max-width: 1135px) {
+  .main-text {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: left;
+  }
+}
+
+.main-text p {
+  padding: 5px;
+}
+
+/* smaller mobile  */
+.mobile_image_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#me_img_mobile {
+  margin-left: 25%;
+  margin-right: 25%;
+  max-width: 220px;
+  max-height: 607px;
+  width: auto;
+  height: auto;
+  display: none;
+}
+
+.main-img {
+  padding: 10px;
+  max-width: 100%;
+  max-height: 607px;
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+/* Remove the side image of myself */
+@media (max-width: 1135px) {
+  .main-img {
+    display: none;
+  }
+}
+
+/* Add the image of myself below the <p> element saying hey there
+   otherwise my image is stuck at the bottom of the page with a wall
+   of text first if the person is viewing on mobile */
+@media (max-width: 1135px) {
+  #me_img_mobile {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* Scrollbar shenanigans */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f18a;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Styling for the project boxes on the projects.html page */
+
+.projects {
+  margin-top: var(--main-offset);
+  margin-left: var(--main-offset);
+  margin-right: var(--main-offset);
+
+  position: fixed;
+  overflow-y: auto;
+  height: calc(100% - var(--main-offset));
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  z-index: 2000;
+}
+
+@media (max-width: 1003px) {
+  .projects {
+    overflow-y: scroll;
+  }
+}
+
+.project-box {
+  width: auto;
+  min-width: 200px;
+  max-width: 300px;
+  height: 300px;
+  
+
+  padding: 5px;
+  margin: 10px;
+  
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  background-color: var(--project-box-background);
+
+  display: block;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  border: solid;
+  border-radius: 5px;
+  border-color: var(--accent-color);
+  border-width: 5px;
+
+  text-decoration: none;
+
+  /*transition: transform .2s;*/
+  /*max-height: 30%;*/
+}
+
+.clickable-proj:hover {
+  /*display: block;
+  z-index: 2000;*/
+  border-color: var(--red-color);
+  background-color: var(--offwhite-color);
+}
+
+/* .unclickable-proj {
+  display: flex;
+}
+
+.unclickable-proj a {
+  cursor: default;
+} */
+
+.project-box a {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+/* Title of Project */
+.project-box a h3 {
+  height: 10%;
+}
+
+/* Description of Project */
+.project-box a p {
+  height: 40%;
+  padding: 3px;
+}
+
+/* Image for Project */
+.project-box a img {
+  width: 95%;
+  height: 45%;
+  margin: 10px;
+}
+
+/* gamba.html */
+
+.gamba {
+  margin-top: var(--main-offset);
+  margin-left: var(--main-offset);
+  margin-right: var(--main-offset);
+
+  position: fixed;
+  overflow-y: auto;
+  height: calc(100% - var(--main-offset));
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  z-index: 2000;
+}
+
+/* contact.html */
+
+.main-contact {
+  position: fixed;
+  margin-top: var(--main-offset);
+  margin-left: var(--main-offset);
+  margin-right: var(--main-offset);
+
+  display: flex;
+  justify-content: center;
+}
+
+.main-text-contact {
+  margin: 5px;
+}
+
+.main-text-contact p {
+  margin: 5px;
+}
+
+.main-text-contact div {
+  flex-flow: row wrap;
+}
+
+.main-text-contact div a {
+  margin: 5px;
+}
+
+/* For mobile main content */
+@media only screen and (min-width: 360px) and (max-width: 850px) {
+  .nav-main {
+    height: var(--mobile-half-main-offset);
+  }
+  .nav-main ul li a {
+    font-size: 138%;
+  }
+  .sidenav {
+    width: var(--mobile-eigth-main-offset);
+  }
+  .sidenav ul li{
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  /* order matters so change font before main */
+  .main-text {
+    font-size: 130%;
+    padding: 2px;
+  }
+  .main-text p {
+    padding: 2px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .main {
+    margin-left: var(--mobile-eigth-main-offset);
+    margin-top: var(--mobile-half-main-offset);
+    margin-right: var(--mobile-eigth-main-offset);
+    height: calc(100% - var(--mobile-half-main-offset));
+    padding: 3px;
+  }
+}
+
+/* image in main.html */
+@media only screen and (min-width: 360px) and (max-width: 850px)  {
+  #me_img_mobile {
+    /* transform: translate(-25%, 0%); */
+  }
+}
+
+/* for mobile projects.html */
+@media only screen and (min-width: 360px) and (max-width: 850px)  {
+  .projects {
+    margin-left: var(--mobile-quarter-main-offset);
+    margin-top: var(--mobile-half-main-offset);
+    margin-right: var(--mobile-quarter-main-offset);
+    height: calc(100% - var(--mobile-half-main-offset));
+  }
+}
+
+/* for mobile maint-contact.html */
+@media only screen and (min-width: 360px) and (max-width: 850px)  {
+  .main-contact {
+    margin-left: var(--mobile-quarter-main-offset);
+    margin-top: var(--mobile-half-main-offset);
+    margin-right: var(--mobile-quarter-main-offset);
+    font-size: 130%;
+  }
+}
