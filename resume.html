@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio of Maxim Zabilo</title>
+    <!--link rel="stylesheet" href="style.css"-->
+</head>
+
+<style type="text/css">      
+    /*  */    
+    html,
+    body,
+    div {
+        margin: 0px;
+        padding: 0px;
+        height: 100%;
+        border: none;
+        overflow: hidden;
+    } 
+
+    /* Make the topbar dark gray. Possible to add more buttons in the future like a download resume button  */
+    .topbar {
+        width: 100%;
+        height: 4em;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        background-color: #323639;
+    }
+    .topbar h1 {
+        font-family: sans-serif;
+        margin: 0;
+        color: white;
+        font-size: 100%;
+        padding: 0px 10px 0px 30px;
+    }
+
+    /* Spans across the whole screen below the topbar. Acts as a container for the center. */
+    .main {
+        width: 100%;
+        background-color: #525659;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* center keeps the google doc html representation inside */
+    .center {
+        min-width: 850px;
+        overflow-x: hidden;
+    }
+    .center object {
+        width: 100%;
+        height: calc(100% - 4em);
+        overflow-x: hidden;
+    }
+
+    /* mobile screen */
+    @media only screen and (min-width: 360px) and (max-width: 850px) {
+        .topbar {
+            height: 6em;
+        }
+        .topbar h1 {
+            font-size: 150%;
+        }
+        .center {
+            min-width: 360px;
+            overflow-x: hidden;
+        }
+        .center object {
+            height: calc(100% - 6em);
+        }
+    }
+</style>
+
+<body style="margin: 0; overflow-y: hidden;">
+
+    <!--object data="pdf/Resume.pdf" type="application/pdf" style="min-height:100vh;width:100%"></object-->
+
+    <div class="topbar">
+        <h1>Resume</h1>
+    </div>
+    
+    <!-- I wanted to replicate the look that the type="application/pdf" from the object element above
+        because it's easy on the eyes and highlights the resume as the main point of the page. That is
+        why I added a topbar and a surrounding gray color around the text/html from the google doc. -->
+    <div class="main">
+        <div class="center">
+            <object data="https://docs.google.com/document/d/e/2PACX-1vSXuPznydAdlHwAPlyRyIVIp4faaxIHTkte6_nk-w63p5HMr9U1zdlyb5pgPVuaXblsQFSnvhQSQOb9/pub?embedded=true"
+                type="text/html"
+                width="100%" 
+                height="100vh" 
+                marginheight="0"
+                marginwidth="0"
+                scrolling="auto"
+                padding="0"
+                margin="0"
+                overflow-x="hidden"
+            ></object>
+
+            <!-- Am not using the iframe anymore because apparently it is not the most secure with possible injections from
+                malacious actors -->
+            <!-- <iframe src="https://docs.google.com/document/d/e/2PACX-1vSXuPznydAdlHwAPlyRyIVIp4faaxIHTkte6_nk-w63p5HMr9U1zdlyb5pgPVuaXblsQFSnvhQSQOb9/pub?embedded=true"
+                frameborder="0" 
+                marginheight="0" 
+                marginwidth="0" 
+                width="100vh" 
+                height="100vh" 
+                scrolling="auto"
+                padding="0"
+                margin="0"
+            ></iframe> -->
+
+        </div>
+    </div>
+    
+</body>
+
+</html>
